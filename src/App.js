@@ -6,16 +6,35 @@ import Demo from './components/DemoComponent';
 function App() {
   const initialState = {
     name: 'Ryan',
+    activity: 'Pooping',
   };
 
   const reducer = (state, action) => {
-    const { name} = action;
+    const { name, activity } = action;
     switch (action.type){
       case "CHANGE_NAME":
         return {
           ...state,
           name,
         };
+        case "ACTION_NAP":
+          return {
+            ...state,
+            activity,
+          };
+        
+        case "ACTION_EAT": 
+          return {
+            ...state,
+            activity,
+          };
+        
+        case "ACTION_PLAY":
+          return{
+            ...state,
+            activity,
+          };
+      
         default:
           return state;
     }
